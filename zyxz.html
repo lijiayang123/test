@@ -1,0 +1,60 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.center{
+				float:left;
+				margin-left: 100px ;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="center">
+			<select id="select1" multiple style="width:100px;height: 200px;" ondblclick="sel()">
+				<option value="选项1">选项1</option>
+				<option value="选项2">选项2</option>
+				<option value="选项3">选项3</option>
+				<option value="选项4">选项4</option>
+				<option value="选项5">选项5</option>
+				
+			</select>
+			<input type="button" onclick="sel()" value="将左边选中的选项添加到右边" />
+		</div>
+		<div class="center">
+			<select id="select2" multiple style="width:100px;height: 200px;"  ondblclick="cancel_sel()">
+				
+			</select>
+			<input type="button" onclick="cancel_sel()" value="将右边选中的选项添加到左边" />
+		</div>
+	</body>
+	<script type="text/javascript">
+		function sel(){
+			var select1 = document.getElementById("select1");
+			var select2 = document.getElementById("select2");
+			
+			var select1_options = select1.getElementsByTagName("option");
+			for(var i = 0; i < select1_options.length; i++){
+				var opt = select1_options[i];
+				if(opt.selected){
+					select2.appendChild(opt);
+				}
+			}
+			
+		}
+		//取消选中
+		function cancel_sel(){
+			var select1 = document.getElementById("select1");
+			var select2 = document.getElementById("select2");
+			
+			var select2_options = select2.getElementsByTagName("option");
+			for(var i = 0; i < select2_options.length; i++){
+				var opt = select2_options[i];
+				if(opt.selected){
+					select1.appendChild(opt);
+				}
+			}
+			
+		}
+	</script>
+</html>

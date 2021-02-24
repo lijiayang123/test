@@ -1,0 +1,80 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			table{
+				border: 1px solid #000;
+				width: 400px;
+			}
+		</style>
+		<script type="text/javascript">
+			function change(){
+				var all = document.getElementById("checkbox_all");
+				var cb = document.getElementsByName("personid");
+				
+				//判断全选按钮是否被选中
+				if(all.checked){
+					for(var i = 0; i < cb.length; i++){
+						cb[i].checked = true;
+					}
+				}else{
+					for(var i = 0; i < cb.length; i++){
+						cb[i].checked = false;
+					}
+				}
+			}
+			
+			//反选
+			function reverse(){
+				//获取所有的checkbox
+				var cb = document.getElementsByName("personid");
+				for(var i = 0; i < cb.length; i++){
+					if(cb[i].checked){
+						cb[i].checked = false;						
+					}else{
+						cb[i].checked = true;	
+					}
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		
+		<table border="1" cellspacing="0" cellpadding="0">
+			<tr>
+				<th>全选<input type="checkbox" id="checkbox_all" onclick="change()"/></th>
+				<th>姓名</th>
+				<th>年龄</th>
+				<th>手机号</th>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="personid" /></td>
+				<td>张三</td>
+				<td>20</td>
+				<td>15033444455</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox"  name="personid"/></td>
+				<td>李四</td>
+				<td>30</td>
+				<td>15033444456</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox"  name="personid"/></td>
+				<td>王五</td>
+				<td>40</td>
+				<td>15033444457</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox"  name="personid"/></td>
+				<td>赵六</td>
+				<td>50</td>
+				<td>15033444458</td>
+			</tr>
+		</table>
+		
+		<input type="button"  value="反选" onclick="reverse()"/>
+	</body>
+</html>

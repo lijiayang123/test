@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background:url(./photo/1.jpg) no-repeat center;
+            background-size: 100%;
+        }
+        .a{
+            width: 400px;
+            height: 500px;
+            margin: 150px auto 0 auto;
+        }
+        .a1{
+            border: 1 solid;
+            border-radius:25px;
+            margin: 5px 0 0 0;
+        }
+        .input_1{
+            width: 100%;
+            height: 50px;
+        }
+        .a2{
+            float: left;
+        }
+        .a3{
+            float: right;
+        }
+        .z{
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="a">
+        <div class="z">欢迎光临</div>
+        <div class="a1">
+            <input type="text" placeholder="username" class="use input_1" value="">
+        </div>
+        <div class="a1">
+            <input type="text" placeholder="password" class="pas input_1" value="">
+        </div>
+        <div class="a1">
+            <button type="submit" onclick="Login()" class="input_1" >提交</button>
+        </div>
+        <div class="a2">
+            <a href="/test.html" class="zc">新用户注册</a>
+        </div>
+        <div class="a3">
+            <a href="/test.html" class="wjmm">忘记密码</a>
+        </div>
+    </div>
+    
+</body>
+<script type="text/javascript">
+	let rusername="tom"
+	let rpassword='123456'
+    function Login() {  /*登陆验证*/
+        var username = document.querySelector('.use').value /*获得账号输入框的内容*/
+        var password = document.querySelector(".pas").value; /*获得密码输入内容*/
+		if(username==''){
+			return alert('请填写用户名')
+		}
+		if(password==''){
+			return alert('请填写密码')
+		}
+		if(username==rusername){
+			if(password==rpassword){
+					alert('登录成功')
+				
+			}else{
+				if(password.length>=6){
+				alert('密码错误')
+				}else{
+					alert('密码位数不能小于6位')
+				}
+			}
+			
+		}else{
+			alert('账号不存在')
+		}
+		
+    }
+</script>
+</html>
